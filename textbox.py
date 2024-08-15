@@ -36,8 +36,11 @@ action.move_to_element(submit_button).click().perform()
 # scrolling to the bottom of the page
 driver.execute_script("window.scrollBy(0,document.body.scrollHeight);")
 
+
 # extract the results and assert with the test data
 output_name = driver.find_element(By.ID, "name").text
 output_email = driver.find_element(By.ID, "email").text
 assert username == output_name.split(":")[1]
+print(username)
 assert valid_email == output_email.split(":")[1]
+print(valid_email)
